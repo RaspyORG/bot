@@ -8,7 +8,7 @@ module.exports = {
     .setDescription("Lists all available commands."),
   async execute(interaction, client) {
     const helpEmbed = new EmbedBuilder()
-      .setColor(0x565a5d)
+      .setColor("1fa048")
       .setTitle("Help")
       .setDescription("List of commands:")
       .setTimestamp();
