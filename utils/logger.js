@@ -1,3 +1,11 @@
+function logger(msg, level = 'log') {
+  const ts = new Date().toISOString();
+  if (level === 'error') console.error(`[${ts}] ERROR:`, msg);
+  else if (level === 'warn') console.warn(`[${ts}] WARN:`, msg);
+  else console.log(`[${ts}] LOG:`, msg);
+}
+
+module.exports = logger;
 const chalk = require("chalk");
 const moment = require("moment");
 

@@ -1,0 +1,31 @@
+2025-10-12 22:26:02 INFO: [CMD] Loaded command: status
+2025-10-12 22:26:02 INFO: [CMD] Loaded command: verify
+2025-10-12 22:26:02 INFO: [CMD] Loaded command: help
+2025-10-12 22:26:02 INFO: Started refreshing application (/) commands.
+2025-10-12 22:26:02 INFO: [EVENT] Loaded event: interactionCreate
+2025-10-12 22:26:02 INFO: [EVENT] Loaded event: ready
+2025-10-12 22:26:03 INFO: [READY] Successfully reloaded application (/) commands to guild 1348741817381949491.
+2025-10-12 22:26:03 INFO: [READY] MDOT Utilities#6743 is now online and ready!
+2025-10-12 22:26:03 INFO: Started OAuth verification server.
+2025-10-12 22:26:03 INFO: OAuth verification server listening on null
+2025-10-12 22:26:43 INFO: [CMD] Loaded command: status
+2025-10-12 22:26:43 INFO: [CMD] Loaded command: verify
+2025-10-12 22:26:43 INFO: [CMD] Loaded command: help
+2025-10-12 22:26:43 INFO: Started refreshing application (/) commands.
+2025-10-12 22:26:43 INFO: [EVENT] Loaded event: interactionCreate
+2025-10-12 22:26:43 INFO: [EVENT] Loaded event: ready
+2025-10-12 22:26:44 INFO: [READY] Successfully reloaded application (/) commands to guild 1348741817381949491.
+2025-10-12 22:26:44 INFO: [READY] MDOT Utilities#6743 is now online and ready!
+2025-10-12 22:26:45 INFO: Started OAuth verification server.
+2025-10-12 22:26:45 INFO: OAuth verification server listening on http://localhost:3000
+2025-10-12 22:28:27 INFO: [CMD] Loaded command: status
+2025-10-12 22:28:27 INFO: [CMD] Loaded command: verify
+2025-10-12 22:28:27 INFO: [CMD] Loaded command: help
+2025-10-12 22:28:27 INFO: Started refreshing application (/) commands.
+2025-10-12 22:28:27 INFO: [EVENT] Loaded event: interactionCreate
+2025-10-12 22:28:27 INFO: [EVENT] Loaded event: ready
+2025-10-12 22:28:27 INFO: [READY] Successfully reloaded application (/) commands to guild 1348741817381949491.
+2025-10-12 22:28:28 INFO: [READY] MDOT Utilities#6743 is now online and ready!
+2025-10-12 22:28:28 INFO: Started OAuth verification server.
+2025-10-12 22:28:28 INFO: OAuth verification server listening on http://localhost:3000
+2025-10-12 22:28:47 INFO: Auto-associated discord 904456276287819827 -> roblox 2974594300

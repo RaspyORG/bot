@@ -15,6 +15,43 @@ const client = new Client({
   ],
 });
 
+// embed helpers attached to client for standardized replies
+const { correctEmbed, incorrectEmbed } = require('./utils/embeds');
+const { MessageFlags } = require('discord.js');
+
+/**
+ * Reply (or edit reply) with a success embed.
+ * @param {Interaction} interaction
+ * @param {string} title
+ * @param {string} description
+ * @param {object} options { ephemeral: boolean }
+ */
+client.successReply = async (interaction, title, description, options = {}) => {
+  const embed = correctEmbed(title, description);
+  try {
+    const flags = options.ephemeral ? MessageFlags.Ephemeral : undefined;
+    if (interaction.replied || interaction.deferred) {
+      return interaction.editReply({ embeds: [embed], ...(flags ? { flags } : {}) });
+    }
+    return interaction.reply({ embeds: [embed], ...(flags ? { flags } : {}) });
+  } catch (err) {
+    logger(`Failed to send success reply: ${err}`, 'error');
+  }
+};
+
+client.errorReply = async (interaction, title, description, options = {}) => {
+  const embed = incorrectEmbed(title, description);
+  try {
+    const flags = options.ephemeral !== false ? MessageFlags.Ephemeral : undefined;
+    if (interaction.replied || interaction.deferred) {
+      return interaction.editReply({ embeds: [embed], ...(flags ? { flags } : {}) });
+    }
+    return interaction.reply({ embeds: [embed], ...(flags ? { flags } : {}) });
+  } catch (err) {
+    logger(`Failed to send error reply: ${err}`, 'error');
+  }
+};
+
 // Central state management for the status feature, per guild
 client.botState = {}; // Key: guildId, Value: state object
 
@@ -43,4 +80,29 @@ for (const file of handlerFiles) {
   require(filePath)(client, logger);
 }
 
-client.login(process.env.DISCORD_TOKEN);
+// Global error handlers to help debugging crashes
+process.on('unhandledRejection', (reason, promise) => {
+  logger(`Unhandled Rejection: ${reason}`,'error');
+});
+
+process.on('uncaughtException', (err) => {
+  logger(`Uncaught Exception: ${err.stack || err}`,'error');
+});
+
+process.on('beforeExit', (code) => {
+  logger(`Process beforeExit with code: ${code}`, 'debug');
+});
+
+process.on('exit', (code) => {
+  logger(`Process exit with code: ${code}`, 'debug');
+});
+
+// Wrap login so we catch immediate login rejects
+client
+  .login(process.env.DISCORD_TOKEN)
+  .then(() => {
+    logger('Login promise resolved.', 'debug');
+  })
+  .catch((err) => {
+    logger(`Failed to login: ${err}`, 'error');
+  });
