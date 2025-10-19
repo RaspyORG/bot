@@ -1,5 +1,8 @@
+<div align="center">
+  <img src="assets/vector.svg" alt="Centered Image" width="400">
+</div>
 # Raspy Bot
+Open Source Roblox Discord Bot for servers. Packed with features for many games and Roblox management tools and automations.
 
-PLEASE READ "LICENSE" FILE BEFORE USING, MODYFYING OR DISTRIBUTING CODE.
-
-## By golden.axolotl on Discord, gaxolotl on GitHub
+# Contributing
+To contribute, please fork this repository and make the neccesarry changes. Then you may submit a Pull Request.
