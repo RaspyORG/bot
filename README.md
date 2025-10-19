@@ -5,5 +5,12 @@
 # Raspy Bot
 Open Source Roblox Discord Bot for servers. Packed with features for many games, Roblox management tools and automations.
 
+# How to use
+To run you can use the commands
+```bash
+node . # or npm start
+```
+For making the .env file you can start by inspecting .env.example
+
 # Contributing
 To contribute, please fork this repository and make the neccesarry changes. Then you may submit a Pull Request.
