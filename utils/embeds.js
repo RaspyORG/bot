@@ -1,4 +1,5 @@
 const { EmbedBuilder } = require("discord.js");
+const botName = process.env.BOT_NAME || 'Raspy';
 
 function correctEmbed(title, description) {
   return new EmbedBuilder()
@@ -6,7 +7,7 @@ function correctEmbed(title, description) {
     .setTitle(`<:1397922189558153348:1426910253999587430> ${title}`)
     .setDescription(description)
     .setTimestamp()
-    .setFooter({ text: "/help | MDOT" });
+    .setFooter({ text: `/help | ${botName}` });
 }
 
 function incorrectEmbed(title, description) {
@@ -15,7 +16,7 @@ function incorrectEmbed(title, description) {
     .setTitle(`<:1397926547066978454:1426910271049568376> ${title}`)
     .setDescription(description)
     .setTimestamp()
-    .setFooter({ text: "/help | MDOT" });
+    .setFooter({ text: `/help | ${botName}` });
 }
 
 module.exports = {
